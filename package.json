@@ -19,7 +19,7 @@
     ]
   },
   "devDependencies": {
-    "@ceoimon/typed-css-modules": "^0.0.1",
+    "@ceoimon/typed-css-modules": "^0.1.0",
     "@material-ui/core": "^1.2.2",
     "@types/chrome": "^0.0.63",
     "@types/classnames": "^2.2.4",
@@ -71,7 +71,7 @@
     "mobx-react-router": "^4.0.4",
     "moment": "^2.22.2",
     "qrcode.react": "^0.8.0",
-    "@fantasygold/fantasygoldjs-wallet": "^0.2.1",
+    "@fantasygold/fantasygoldjs-wallet": "^0.2.2",
     "@fantasygold/fgcweb3": "^1.1.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
