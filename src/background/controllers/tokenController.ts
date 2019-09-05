@@ -1,7 +1,7 @@
 import { each, findIndex, isEmpty } from 'lodash';
 import BigNumber from 'bignumber.js';
 import { Insight } from 'fantasygoldjs-wallet';
-const { Qweb3 } = require('qweb3');
+const { FGCweb3 } = require('fgcweb3');
 
 import FGCLiteController from '.';
 import IController from './iController';
@@ -18,7 +18,7 @@ const INIT_VALUES = {
   tokens: undefined,
   getBalancesInterval: undefined,
 };
-const qweb3 = new Qweb3('null');
+const fgcweb3 = new FGCweb3('null');
 
 export default class TokenController extends IController {
   private static GET_BALANCES_INTERVAL_MS: number = 60000;
@@ -104,7 +104,7 @@ export default class TokenController extends IController {
     }
 
     const methodName = 'balanceOf';
-    const data = qweb3.encoder.constructData(
+    const data = fgcweb3.encoder.constructData(
       fgc20TokenABI,
       methodName,
       [this.main.account.loggedInAccount.wallet.fjsWallet.address],
@@ -118,7 +118,7 @@ export default class TokenController extends IController {
     }
 
     // Decode result
-    const decodedRes = qweb3.decoder.decodeCall(result, fgc20TokenABI, methodName);
+    const decodedRes = fgcweb3.decoder.decodeCall(result, fgc20TokenABI, methodName);
     const bnBal = decodedRes!.executionResult.formattedOutput[0]; // Returns as a BN instance
     const bigNumberBal = new BigNumber(bnBal.toString(10)); // Convert to BigNumber instance
     const balance = bigNumberBal.dividedBy(new BigNumber(10 ** token.decimals)).toNumber(); // Convert to regular denomination
@@ -147,33 +147,33 @@ export default class TokenController extends IController {
     try {
       // Get name
       let methodName = 'name';
-      let data = qweb3.encoder.constructData(fgc20TokenABI, methodName, []);
+      let data = fgcweb3.encoder.constructData(fgc20TokenABI, methodName, []);
       let { result, error }: IRPCCallResponse =
         await this.main.rpc.callContract(generateRequestId(), [contractAddress, data]);
       if (error) {
         throw Error(error);
       }
-      result = qweb3.decoder.decodeCall(result, fgc20TokenABI, methodName) as Insight.IContractCall;
+      result = fgcweb3.decoder.decodeCall(result, fgc20TokenABI, methodName) as Insight.IContractCall;
       const name = result.executionResult.formattedOutput[0];
 
       // Get symbol
       methodName = 'symbol';
-      data = qweb3.encoder.constructData(fgc20TokenABI, methodName, []);
+      data = fgcweb3.encoder.constructData(fgc20TokenABI, methodName, []);
       ({ result, error } = await this.main.rpc.callContract(generateRequestId(), [contractAddress, data]));
       if (error) {
         throw Error(error);
       }
-      result = qweb3.decoder.decodeCall(result, fgc20TokenABI, methodName) as Insight.IContractCall;
+      result = fgcweb3.decoder.decodeCall(result, fgc20TokenABI, methodName) as Insight.IContractCall;
       const symbol = result.executionResult.formattedOutput[0];
 
       // Get decimals
       methodName = 'decimals';
-      data = qweb3.encoder.constructData(fgc20TokenABI, methodName, []);
+      data = fgcweb3.encoder.constructData(fgc20TokenABI, methodName, []);
       ({ result, error } = await this.main.rpc.callContract(generateRequestId(), [contractAddress, data]));
       if (error) {
         throw Error(error);
       }
-      result = qweb3.decoder.decodeCall(result, fgc20TokenABI, methodName) as Insight.IContractCall;
+      result = fgcweb3.decoder.decodeCall(result, fgc20TokenABI, methodName) as Insight.IContractCall;
       const decimals = result.executionResult.formattedOutput[0];
 
       if (name && symbol && decimals) {
@@ -212,7 +212,7 @@ export default class TokenController extends IController {
                                 gasLimit: number, gasPrice: number ) => {
     // bn.js does not handle decimals well (Ex: BN(1.2) => 1 not 1.2) so we use BigNumber
     const bnAmount = new BigNumber(amount).times(new BigNumber(10 ** token.decimals));
-    const data = qweb3.encoder.constructData(fgc20TokenABI, 'transfer', [receiverAddress, bnAmount]);
+    const data = fgcweb3.encoder.constructData(fgc20TokenABI, 'transfer', [receiverAddress, bnAmount]);
     const args = [token.address, data, null, gasLimit, gasPrice];
     const { error } = await this.main.rpc.sendToContract(generateRequestId(), args);
 

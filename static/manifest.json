@@ -16,7 +16,7 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "storage", 
+    "storage",
     "*://*/*"
   ],
   "background": {
@@ -73,7 +73,7 @@
     {
       "name": "FantasyGold Core",
       "website": "https://fantasygold.io/"
-    },
-    
+    }
+
   ]
 }
