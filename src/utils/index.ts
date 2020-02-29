@@ -27,10 +27,10 @@ export const generateRandomId = (): string => {
 };
 
 /*
-* Validates the FantasyGoldaddress based on length and starting character.
+* Validates the FantasyGold address based on length and starting character.
 * @param isMainNet {boolean} Flag if is a mainnet address (or else testnet address).
-* @param address {string} The FantasyGoldaddress to validate.
-* @return {boolean} Returns if it is a valid FantasyGoldaddress.
+* @param address {string} The FantasyGold address to validate.
+* @return {boolean} Returns if it is a valid FantasyGold address.
 */
 export const isValidAddress = (isMainNet: boolean, address?: string) => {
   if (!address) {

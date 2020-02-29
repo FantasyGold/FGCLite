@@ -38,7 +38,7 @@ const styles: StyleRulesCallback = (theme: Theme) => ({
   anim9: {
     width: '160px',
     height: '6px',
-    background: 'linear-gradient(to right, #000, #000 30%, #e0c469 10%)',
+    background: 'linear-gradient(to right, #000000, #000000 30%, #999 10%)',
     animation: 'anim9 1s linear infinite',
   },
   '@keyframes anim9': {

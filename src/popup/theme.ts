@@ -23,8 +23,8 @@ const colorGray: ColorProperty = '#747474';
 const colorOrange: ColorProperty = '#F5A623';
 const colorRed: ColorProperty = '#D0021B';
 
-const primaryColor: ColorProperty = '#000';
-const primaryColorDark: ColorProperty = '#000';
+const primaryColor: ColorProperty = '#000000';
+const primaryColorDark: ColorProperty = '#000000';
 const primaryColorLight: ColorProperty = '#e0c469';
 
 const secondaryColor: ColorProperty = colorWhite;

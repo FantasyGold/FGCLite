@@ -97,7 +97,7 @@ export default class TokenController extends IController {
   private getFGCTokenBalance = async (token: FGCToken) => {
     if (!this.main.account.loggedInAccount
       || !this.main.account.loggedInAccount.wallet
-      || !this.main.account.loggedInAccount.wallet.fjsWallet
+      || !this.main.account.loggedInAccount.wallet.qjsWallet
     ) {
       console.error('Cannot getFGCTokenBalance without wallet instance.');
       return;
@@ -107,7 +107,7 @@ export default class TokenController extends IController {
     const data = fgcweb3.encoder.constructData(
       fgc20TokenABI,
       methodName,
-      [this.main.account.loggedInAccount.wallet.fjsWallet.address],
+      [this.main.account.loggedInAccount.wallet.qjsWallet.address],
     );
     const args = [token.address, data];
     const { result, error } = await this.main.rpc.callContract(generateRequestId(), args);

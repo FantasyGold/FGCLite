@@ -130,6 +130,6 @@ export enum TRANSACTION_SPEED {
 export enum FGCLITE_ACCOUNT_CHANGE {
   LOGIN = 'Account Logged In',
   LOGOUT = 'Account Logged Out',
-  BALANCE_CHANGE = 'FGCAccount Balance Changed',
+  BALANCE_CHANGE = 'FGC Account Balance Changed',
   DAPP_CONNECTION = 'Account Connected to Dapp',
 }

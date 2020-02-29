@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Typography, withStyles, WithStyles } from '@material-ui/core';
-import QRCode from 'qrcode.react';
+import FGCode from 'qrcode.react';
 
 import styles from './styles';
 import NavBar from '../../components/NavBar';
@@ -35,7 +35,7 @@ class Receive extends Component<WithStyles & IProps, {}> {
           </div>
           <Typography className={classes.currencyValue}>{`${fantasygoldBalanceUSD} ${networkBalAnnotation}`}</Typography>
           <div className={classes.qrCodeContainer}>
-            <QRCode value={info!.addrStr} />
+            <FGCode value={info!.addrStr} />
           </div>
         </div>
       </div>

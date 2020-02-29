@@ -46,7 +46,7 @@ export default class SendStore {
   }
   @computed public get receiverFieldError(): string | undefined {
     return isValidAddress(this.app.sessionStore.isMainNet, this.receiverAddress)
-      ? undefined : 'Not a valid FantasyGoldaddress';
+      ? undefined : 'Not a valid FantasyGold address';
   }
   @computed public get amountFieldError(): string | undefined {
     return this.maxAmount && isValidAmount(Number(this.amount), this.maxAmount) ? undefined : 'Not a valid amount';
@@ -81,7 +81,7 @@ export default class SendStore {
     chrome.runtime.onMessage.addListener(this.handleMessage);
     chrome.runtime.sendMessage({ type: MESSAGE_TYPE.GET_FGC_TOKEN_LIST }, (response: any) => {
       this.tokens = response;
-      this.tokens.unshift(new FGCToken('FantasyGoldToken', 'FGC', 8, ''));
+      this.tokens.unshift(new FGCToken('FantasyGold Token', 'FGC', 8, ''));
       this.tokens[0].balance = this.app.sessionStore.info ? this.app.sessionStore.info.balance : undefined;
       this.token = this.tokens[0];
     });

@@ -7,25 +7,25 @@ import { ISendTxOptions } from 'fantasygoldjs-wallet/lib/tx';
 import { RPC_METHOD, NETWORK_NAMES } from '../constants';
 
 export default class Wallet implements ISigner {
-  public fjsWallet?: FantasyGoldWallet;
+  public qjsWallet?: FantasyGoldWallet;
   public rpcProvider?: WalletRPCProvider;
   public info?: Insight.IGetInfo;
   public fantasygoldUSD?: number;
   public maxFantasyGoldSend?: number;
 
-  constructor(fjsWallet: FantasyGoldWallet) {
-    this.fjsWallet = fjsWallet;
-    this.rpcProvider = new WalletRPCProvider(this.fjsWallet);
+  constructor(qjsWallet: FantasyGoldWallet) {
+    this.qjsWallet = qjsWallet;
+    this.rpcProvider = new WalletRPCProvider(this.qjsWallet);
   }
 
   @action
   public updateInfo = async () => {
-    if (!this.fjsWallet) {
-      console.error('Cannot updateInfo without fjsWallet instance.');
+    if (!this.qjsWallet) {
+      console.error('Cannot updateInfo without qjsWallet instance.');
     }
 
     /**
-     * We add a timeout promise to handle if fjsWallet hangs when executing getInfo.
+     * We add a timeout promise to handle if qjsWallet hangs when executing getInfo.
      * (This happens if the insight api is down)
      */
     let timedOut = false;
@@ -37,7 +37,7 @@ export default class Wallet implements ISigner {
       }, 30000);
     });
 
-    const getInfoPromise = this.fjsWallet!.getInfo();
+    const getInfoPromise = this.qjsWallet!.getInfo();
     const promises = [timeoutPromise, getInfoPromise];
     let newInfo: any;
     try {
@@ -57,12 +57,12 @@ export default class Wallet implements ISigner {
 
   // @param amount: (unit - whole FGC)
   public send = async (to: string, amount: number, options: ISendTxOptions): Promise<Insight.ISendRawTxResult> => {
-    if (!this.fjsWallet) {
+    if (!this.qjsWallet) {
       throw Error('Cannot send without wallet.');
     }
 
-    // convert amount units from whole FGC=> SATOSHI FGC
-    return await this.fjsWallet!.send(to, amount * 1e8, { feeRate: options.feeRate });
+    // convert amount units from whole FGC => SATOSHI FGC
+    return await this.qjsWallet!.send(to, amount * 1e8, { feeRate: options.feeRate });
   }
 
   public sendTransaction = async (args: any[]): Promise<any> => {
@@ -81,10 +81,10 @@ export default class Wallet implements ISigner {
   }
 
   public calcMaxFantasyGoldSend = async (networkName: string) => {
-    if (!this.fjsWallet || !this.info) {
+    if (!this.qjsWallet || !this.info) {
       throw Error('Cannot calculate max send amount without wallet or this.info.');
     }
-    this.maxFantasyGoldSend = await this.fjsWallet.sendEstimateMaxValue(this.maxFantasyGoldSendToAddress(networkName));
+    this.maxFantasyGoldSend = await this.qjsWallet.sendEstimateMaxValue(this.maxFantasyGoldSendToAddress(networkName));
     return this.maxFantasyGoldSend;
   }
 
@@ -96,6 +96,6 @@ export default class Wallet implements ISigner {
    */
   private maxFantasyGoldSendToAddress = (networkName: string) => {
     return networkName === NETWORK_NAMES.MAINNET ?
-      'FQNnmnaeSnRmMuSpbkop1Nei2cPQMe7WAq' : 'fLJsx41F8Uv1KFF3RbrZfdLnyWQzvPdeF9'; //TODO Testnet
+      'FN8HYBmMxVyf7MQaDvBNtneBN8np5dZwoW' : 'fLJsx41F8Uv1KFF3RbrZfdLnyWQzvPdeF9';
   }
 }

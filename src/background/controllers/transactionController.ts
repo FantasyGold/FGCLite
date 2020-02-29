@@ -87,13 +87,13 @@ export default class TransactionController extends IController {
   private fetchTransactions = async (pageNum: number = 0): Promise<Transaction[]> => {
     if (!this.main.account.loggedInAccount
       || !this.main.account.loggedInAccount.wallet
-      || !this.main.account.loggedInAccount.wallet.fjsWallet
+      || !this.main.account.loggedInAccount.wallet.qjsWallet
     ) {
       console.error('Cannot get transactions without wallet instance.');
       return [];
     }
 
-    const wallet = this.main.account.loggedInAccount.wallet.fjsWallet;
+    const wallet = this.main.account.loggedInAccount.wallet.qjsWallet;
     const { pagesTotal, txs } =  await wallet.getTransactions(pageNum);
     this.pagesTotal = pagesTotal;
 

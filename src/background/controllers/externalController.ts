@@ -47,11 +47,11 @@ export default class ExternalController extends IController {
   }
 
   /*
-  * Gets the current FantasyGoldmarket price.
+  * Gets the current FantasyGold market price.
   */
   private getFantasyGoldPrice = async () => {
     try {
-      const jsonObj = await axios.get('https://api.coinmarketcap.com/v2/ticker/1684/');
+      const jsonObj = await axios.get('https://api.coinmarketcap.com/v2/ticker/2870/');
       this.fantasygoldPriceUSD = jsonObj.data.data.quotes.USD.price;
 
       if (this.main.account.loggedInAccount

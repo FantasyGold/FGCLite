@@ -353,7 +353,7 @@ export default class AccountController extends IController {
   * Fetches the wallet info from the current wallet instance.
   */
   private getWalletInfo = async (sendInpageUpdate = true) => {
-    if (!this.loggedInAccount || !this.loggedInAccount.wallet || !this.loggedInAccount.wallet.fjsWallet) {
+    if (!this.loggedInAccount || !this.loggedInAccount.wallet || !this.loggedInAccount.wallet.qjsWallet) {
       console.error('Could not get wallet info.');
       return;
     }
@@ -383,11 +383,11 @@ export default class AccountController extends IController {
 
   /*
   * Executes a sendtoaddress.
-  * @param receiverAddress The address to send FantasyGoldto.
+  * @param receiverAddress The address to send FantasyGold to.
   * @param amount The amount to send.
   */
   private sendTokens = async (receiverAddress: string, amount: number, transactionSpeed: TRANSACTION_SPEED) => {
-    if (!this.loggedInAccount || !this.loggedInAccount.wallet || !this.loggedInAccount.wallet.fjsWallet) {
+    if (!this.loggedInAccount || !this.loggedInAccount.wallet || !this.loggedInAccount.wallet.qjsWallet) {
       throw Error('Cannot send with no wallet instance.');
     }
 
@@ -416,7 +416,7 @@ export default class AccountController extends IController {
   }
 
   /**
-   * We update the maxFantasyGoldamount under 2 scnearios
+   * We update the maxFantasyGold amount under 2 scnearios
    * 1 - When wallet.info has been updated because a new balance has a new maxFantasyGoldSend
    * 2 - Whenever the maxFantasyGoldSend is requested, because even if the balance does not
    * change, the available UTXOs can change(which causes a change in maxFantasyGoldSend).
@@ -425,7 +425,7 @@ export default class AccountController extends IController {
    * unconfirmed UTXOs and update maxFantasyGoldSend accordingly.
    */
   private updateAndSendMaxFantasyGoldAmountToPopup = async () => {
-    if (!this.loggedInAccount || !this.loggedInAccount.wallet || !this.loggedInAccount.wallet.fjsWallet) {
+    if (!this.loggedInAccount || !this.loggedInAccount.wallet || !this.loggedInAccount.wallet.qjsWallet) {
       throw Error('Cannot calculate max balance with no wallet instance.');
     }
 
