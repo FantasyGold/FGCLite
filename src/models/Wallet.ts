@@ -96,6 +96,6 @@ export default class Wallet implements ISigner {
    */
   private maxFantasyGoldSendToAddress = (networkName: string) => {
     return networkName === NETWORK_NAMES.MAINNET ?
-      'FN8HYBmMxVyf7MQaDvBNtneBN8np5dZwoW' : 'fLJsx41F8Uv1KFF3RbrZfdLnyWQzvPdeF9';
+      'FNPdNaCxWiFtMzYb9Z37buVMGHgUANhZoj' : 'FQkweSDcgP3PweibaNjNkDZyTRvDbtf2rZ';
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Typography, withStyles, WithStyles } from '@material-ui/core';
-import FGCode from 'qrcode.react';
+import QRCode from 'qrcode.react';
 
 import styles from './styles';
 import NavBar from '../../components/NavBar';
