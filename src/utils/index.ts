@@ -40,9 +40,9 @@ export const isValidAddress = (isMainNet: boolean, address?: string) => {
     return false;
   }
   if (isMainNet) {
-    return address.startsWith('Q');
+    return address.startsWith('F');
   }
-  return address.startsWith('q');
+  return address.startsWith('f');
 };
 
 export const isValidPrivateKey = (address?: string) => {
