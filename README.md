@@ -112,7 +112,7 @@ window.addEventListener('message', handleMessage, false);
 ```
 
 ### Using FGCweb3
-You may also use our FGCweb3 convenience library to make `sendtocontract` or `callcontract` calls. See the instructions in the Github repo here: https://github.com/bodhiproject/fgcweb3.js
+You may also use our FGCweb3 convenience library to make `sendtocontract` or `callcontract` calls. See the instructions in the Github repo here: https://github.com/fantasygold/FGCweb3
 
 ### Using RegTest
 You can connect FGCLite to regtest. You will need to set the following in your fantasygoldcore-node.json
