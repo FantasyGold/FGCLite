@@ -61,7 +61,7 @@
     "@types/qrcode.react": "^0.8.0",
     "@types/scryptsy": "^2.0.0",
     "@types/secp256k1": "^3.5.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bignumber.js": "^7.2.1",
     "chrome-call": "^3.0.0",
     "classnames": "^2.2.6",
