@@ -2267,23 +2267,6 @@ extsprintf@^1.2.0:
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
 
-"fantasygold-opcodes@git://github.com/FantasyGold/fantasygold-opcodes.git":
-  version "0.0.1"
-  resolved "git://github.com/FantasyGold/fantasygold-opcodes.git#df98aa15f2af7cbd1b2f32845086e5d6d083205f"
-
-"fantasygoldd-rpc@git://github.com/FantasyGold/fantasygoldd-rpc.git":
-  version "0.0.4"
-  resolved "git://github.com/FantasyGold/fantasygoldd-rpc.git#89d3bbb29ba9b6a1a87a7721b09c7bb51ba8da93"
-
-"fantasygoldjs-lib@git://github.com/FantasyGold/fantasygoldjs-lib.git":
-  version "0.0.8"
-  resolved "git://github.com/FantasyGold/fantasygoldjs-lib.git#54ebbf0fb2173c60da112b4c29b0edff85b4386f"
-  dependencies:
-    "@fantasygold/fantasygold-opcodes" "^0.0.1"
-    bignumber.js "^4.1.0"
-    bitcoinjs-lib "^3.3.2"
-    safe-buffer "^5.1.1"
-
 "fantasygoldjs-wallet@git://github.com/FantasyGold/fantasygoldjs-wallet.git":
   version "0.2.3"
   resolved "git://github.com/FantasyGold/fantasygoldjs-wallet.git#f46c8f95a754e155f42a37f178314688b96e26be"
@@ -2332,9 +2315,10 @@ fbjs@^0.8.1:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-"fgcweb3@git://github.com/FantasyGold/fgcweb3.git":
-  version "1.1.0"
-  resolved "git://github.com/FantasyGold/fgcweb3.git#352f2af242857c78ac423a4610338354039663e9"
+"fgcweb3@git://github.com/fantasygold/fgcweb3.git#master":
+  version "1.1.1"
+  uid c199a959c7922c5f93eb093e88d64fa50d229585
+  resolved "git://github.com/fantasygold/fgcweb3.git#c199a959c7922c5f93eb093e88d64fa50d229585"
   dependencies:
     axios "^0.18.1"
     bignumber.js "^7.2.1"
@@ -6456,9 +6440,9 @@ typescript@^3.8.3:
   integrity sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
 
 ua-parser-js@^0.7.18:
-  version "0.7.21"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.21.tgz#853cf9ce93f642f67174273cc34565ae6f308777"
-  integrity sha512-+O8/qh/Qj8CgC6eYBVBykMrNtp5Gebn4dlGD/kKXVkJNDwyrAwSIqwz8CDf+tsAIWVycKcku6gIXJ0qwx/ZXaQ==
+  version "0.7.28"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
+  integrity sha512-6Gurc1n//gjp9eQNXjD9O3M/sMwVtN5S8Lv9bvOYBfKfDNiIIhqiyi01vMBO45u4zkDE420w/e0se7Vs+sIg+g==
 
 uglify-es@^3.3.4:
   version "3.3.9"
