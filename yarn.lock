@@ -2267,23 +2267,6 @@ extsprintf@^1.2.0:
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
 
-"fantasygold-opcodes@git://github.com/FantasyGold/fantasygold-opcodes.git":
-  version "0.0.1"
-  resolved "git://github.com/FantasyGold/fantasygold-opcodes.git#df98aa15f2af7cbd1b2f32845086e5d6d083205f"
-
-"fantasygoldd-rpc@git://github.com/FantasyGold/fantasygoldd-rpc.git":
-  version "0.0.4"
-  resolved "git://github.com/FantasyGold/fantasygoldd-rpc.git#89d3bbb29ba9b6a1a87a7721b09c7bb51ba8da93"
-
-"fantasygoldjs-lib@git://github.com/FantasyGold/fantasygoldjs-lib.git":
-  version "0.0.8"
-  resolved "git://github.com/FantasyGold/fantasygoldjs-lib.git#54ebbf0fb2173c60da112b4c29b0edff85b4386f"
-  dependencies:
-    "@fantasygold/fantasygold-opcodes" "^0.0.1"
-    bignumber.js "^4.1.0"
-    bitcoinjs-lib "^3.3.2"
-    safe-buffer "^5.1.1"
-
 "fantasygoldjs-wallet@git://github.com/FantasyGold/fantasygoldjs-wallet.git":
   version "0.2.3"
   resolved "git://github.com/FantasyGold/fantasygoldjs-wallet.git#f46c8f95a754e155f42a37f178314688b96e26be"
@@ -2332,9 +2315,10 @@ fbjs@^0.8.1:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-"fgcweb3@git://github.com/FantasyGold/fgcweb3.git":
-  version "1.1.0"
-  resolved "git://github.com/FantasyGold/fgcweb3.git#352f2af242857c78ac423a4610338354039663e9"
+"fgcweb3@git://github.com/fantasygold/fgcweb3.git#master":
+  version "1.1.1"
+  uid c199a959c7922c5f93eb093e88d64fa50d229585
+  resolved "git://github.com/fantasygold/fgcweb3.git#c199a959c7922c5f93eb093e88d64fa50d229585"
   dependencies:
     axios "^0.18.1"
     bignumber.js "^7.2.1"
@@ -4098,10 +4082,10 @@ mobx@^5.0.3:
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.15.4.tgz#9da1a84e97ba624622f4e55a0bf3300fb931c2ab"
   integrity sha512-xRFJxSU2Im3nrGCdjSuOTFmxVDGeqOHL+TyADCGbT0k4HHqGmx5u2yaHNryvoORpI4DfbzjJ5jPmuv+d7sioFw==
 
-moment@^2.22.2:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+moment@^2.29.2:
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.2.tgz#00910c60b20843bcba52d37d58c628b47b1f20e4"
+  integrity sha512-UgzG4rvxYpN15jgCmVJwac49h9ly9NurikMWGPdVxm8GZD6XjkKPxDTjQQ43gtGgnV3X0cAyWDdP2Wexoquifg==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
